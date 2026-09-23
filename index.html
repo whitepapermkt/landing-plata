@@ -197,16 +197,48 @@
   .sticky-cta .btn-cta { width: auto; min-height: 44px; padding: 12px 20px; font-size: 0.9375rem; flex-shrink: 0; }
 
   @media (max-width: 639px) {
-    .topbar-inner { padding: 12px 16px; }
-    .topbar .lockup { font-size: 1.2rem; }
-    .topbar .nav-cta { min-height: 40px; padding: 9px 14px; font-size: 0.8rem; }
-    section { padding: 32px 16px; }
-    .hero { padding: 40px 16px 48px; }
-    .hero h1 { font-size: clamp(2.2rem, 7.5vw, 2.9rem); }
+    body { font-size: 0.9375rem; }
+    .topbar-inner { padding: 10px 14px; gap: 8px; }
+    .topbar .brand-group { gap: 8px; }
+    .topbar .lockup { font-size: 1.1rem; }
+    .cobrand-chip { padding: 5px 10px; font-size: 0.62rem; }
+    .topbar .nav-cta { min-height: 38px; padding: 8px 12px; font-size: 0.78rem; }
+    section { padding: 28px 16px; }
+    .section-header .lead { font-size: 0.95rem; }
+    .hero { padding: 32px 16px 36px; }
+    .hero-grid { gap: 20px; }
+    .hero h1 { margin-top: 12px; font-size: clamp(2rem, 8vw, 2.6rem); line-height: 1.12; }
+    .hero p.lead { margin-top: 14px; font-size: 0.9375rem; line-height: 1.55; }
+    .hero-figure { max-width: 22rem; }
+    .signup-card { margin-top: 20px; padding: 18px 16px; }
+    .signup-card__label { font-size: 0.85rem; }
+    .signup-form__field { min-height: 48px; font-size: 0.95rem; }
+    .btn-cta { min-height: 48px; padding: 12px 20px; font-size: 0.95rem; }
+    .signup-note { font-size: 0.75rem; }
+    .receive-card { padding: 18px; }
+    .receive-card h3 { font-size: 1.15rem; }
+    .podcast-art { max-width: 12rem; }
+    .podcast-copy h3 { font-size: 1.4rem; }
+    .podcast-links { gap: 8px; }
+    .podcast-link { padding: 9px 14px; font-size: 0.8125rem; }
     .connect-grid { grid-template-columns: 1fr; }
-    .stats-row { grid-template-columns: 1fr; gap: 10px; }
-    .event-card { grid-template-columns: 1fr; }
-    .event-card__date { border-right: 0; border-bottom: 1px solid var(--neutral-200); padding: 0 0 12px; }
+    .connect-link { padding: 14px 16px; }
+    .stats-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .stat b { font-size: 1.4rem; }
+    .stat span { font-size: 0.68rem; }
+    .social-num { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+    .quote-card { padding: 20px 18px; }
+    .quote-card p.quote { font-size: 1.05rem; }
+    .event-card { grid-template-columns: 1fr; padding: 16px; }
+    .event-card__date { border-right: 0; border-bottom: 1px solid var(--neutral-200); padding: 0 0 12px; text-align: left; }
+    .closer { padding: 40px 16px; }
+    .closer h2 { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+    .closer .signup-card { text-align: left; }
+    .faq summary { font-size: 0.95rem; padding: 16px 4px; }
+    .footer-note { font-size: 0.75rem; }
+    .sticky-cta .offer-title { font-size: 0.85rem; }
+    .sticky-cta .offer-sub { font-size: 0.7rem; }
+    .sticky-cta .btn-cta { padding: 10px 16px; font-size: 0.85rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -263,7 +295,7 @@
             <input class="signup-form__hp" type="text" id="company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button type="submit" class="btn-cta" id="subscribeBtn">Quiero mi acceso <span aria-hidden="true">→</span></button>
           </form>
-          <p class="signup-note">Sin costo mientras seas cliente premium de Banco Plata. Cancela cuando quieras.</p>
+          <p class="signup-note">Sin costo mientras seas cliente premium de Banco Plata.</p>
           <p class="signup-status" id="subscribeStatus" role="status" aria-live="polite"></p>
         </div>
       </div>
