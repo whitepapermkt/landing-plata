@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Whitepaper × Banco Plata — Activa tu beneficio</title>
+<meta name="description" content="Con tu tarjeta premium de Banco Plata recibes Whitepaper sin costo: el análisis de negocios más leído por líderes empresariales en México. Ingresa tu correo y actívalo hoy." />
+<meta name="theme-color" content="#faf9f7" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     WHITEPAPER × BANCO PLATA — Onboarding de beneficio (comp)
+     Marca dominante: Whitepaper (Inter + Instrument Serif · #ee4d3a).
+     Acento de co-marca: "plata" (gris metálico), en dosis moderadas.
+     ============================================================ */
+  :root {
+    color-scheme: light;
+    --cta: #ee4d3a;
+    --cta-hover: #e23a26;
+    --plata: #8b93a1;
+    --plata-deep: #4a5261;
+    --paper: #faf9f7;
+    --ink: #141414;
+    --neutral-900: #171717;
+    --neutral-800: #262626;
+    --neutral-600: #525252;
+    --neutral-500: #737373;
+    --neutral-200: #e5e5e5;
+    --ok-bg: rgba(47, 136, 86, 0.06);
+    --ok-border: rgba(47, 136, 86, 0.2);
+    --ok-ink: #1d5c3f;
+    --err: #b3261e;
+
+    --sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+    --editorial: "Spectral", Georgia, "Times New Roman", serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 1rem; line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+  .font-display { font-family: var(--serif); letter-spacing: -0.015em; font-weight: 400; }
+
+  main { width: 100%; padding-bottom: 92px; }
+  section { padding: 44px 20px; }
+  .wrap { max-width: 72rem; margin: 0 auto; }
+  .wrap-md { max-width: 46rem; margin: 0 auto; }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--cta); outline-offset: 3px; border-radius: 4px; }
+
+  /* ---------- Lockup ---------- */
+  .lockup { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; display: inline-flex; align-items: baseline; gap: 0.36ch; line-height: 1; }
+  .lockup .x { font-family: var(--sans); font-weight: 500; font-size: 0.68em; color: var(--plata-deep); transform: translateY(-0.08em); }
+
+  /* ---------- Co-brand chip ---------- */
+  .cobrand-chip { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--neutral-200); border-radius: 999px; background: linear-gradient(135deg, #f4f5f6 0%, #e7e9ec 100%); padding: 6px 14px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--plata-deep); }
+  .cobrand-chip svg { width: 14px; height: 14px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar { border-bottom: 1px solid var(--neutral-200); background: #fff; position: sticky; top: 0; z-index: 40; }
+  .topbar-inner { max-width: 72rem; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .topbar .brand-group { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .topbar .lockup { font-size: 1.5rem; }
+  .topbar .nav-cta { display: inline-flex; align-items: center; min-height: 44px; border-radius: 999px; background: var(--neutral-900); color: #fff; padding: 10px 20px; font-size: 0.875rem; font-weight: 600; transition: background 0.2s ease; }
+  .topbar .nav-cta:hover { background: var(--cta); }
+
+  /* ---------- Botón ---------- */
+  .btn-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 54px; border-radius: 999px; background: var(--cta); padding: 15px 28px; font-size: 1.0625rem; font-weight: 600; color: #fff; box-shadow: 0 12px 28px -12px rgba(238, 77, 58, 0.55); transition: all 0.2s ease; border: none; cursor: pointer; }
+  .btn-cta:hover { background: var(--cta-hover); transform: translateY(-2px); }
+  .btn-cta:disabled { opacity: 0.65; cursor: progress; transform: none; }
+  .btn-cta svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: #fff; border-bottom: 1px solid var(--neutral-200); padding: 48px 20px 56px; }
+  .hero-grid { max-width: 72rem; margin: 0 auto; display: grid; gap: 28px; align-items: center; }
+  .hero-copy { order: 1; align-self: center; width: 100%; max-width: 34rem; }
+  .hero h1 { margin: 16px 0 0; font-size: clamp(2.6rem, 8vw, 4rem); line-height: 1.08; font-weight: 400; }
+  .hero h1 em { font-style: italic; color: var(--cta); }
+  .hero p.lead { margin: 20px 0 0; max-width: 34rem; font-size: 1.0625rem; line-height: 1.55; color: var(--neutral-500); }
+  .hero p.lead strong { font-weight: 600; color: var(--neutral-800); }
+  .hero-figure { order: 2; margin: 0; width: min(100%, 30rem); max-width: 30rem; justify-self: center; background: #f4f5f6; border: 1px solid var(--neutral-200); border-radius: 16px; padding: 0; overflow: hidden; box-shadow: 0 40px 70px -40px rgba(30, 25, 20, 0.35); }
+  .hero-figure img { display: block; width: 100%; height: auto; }
+
+  /* ---------- Form de activación ---------- */
+  .signup-card { margin-top: 26px; width: 100%; max-width: 30rem; border: 1px solid var(--neutral-200); border-radius: 18px; background: #fff; padding: 22px; box-shadow: 0 24px 50px -36px rgba(23,23,23,0.3); }
+  .signup-card__label { margin: 0 0 12px; font-size: 0.9rem; font-weight: 600; color: var(--neutral-900); }
+  .signup-form { display: grid; gap: 10px; }
+  .signup-form__field { width: 100%; min-height: 52px; border: 1px solid var(--neutral-200); border-radius: 999px; padding: 0 18px; font: inherit; background: #fff; color: var(--neutral-900); }
+  .signup-form__field:focus { outline: 2px solid rgba(238,77,58,0.2); border-color: var(--cta); }
+  .signup-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .signup-note { margin: 12px 0 0; font-size: 0.8125rem; color: var(--neutral-500); }
+  .signup-status { margin-top: 12px; font-size: 0.875rem; line-height: 1.5; display: none; }
+  .signup-status.visible { display: block; }
+  .signup-status.ok { padding: 12px 14px; border: 1px solid var(--ok-border); background: var(--ok-bg); color: var(--ok-ink); border-radius: 12px; }
+  .signup-status.error { padding: 12px 14px; border: 1px solid rgba(179,38,30,0.25); background: rgba(179,38,30,0.06); color: var(--err); border-radius: 12px; }
+
+  /* ---------- Section header ---------- */
+  .section-header { max-width: 44rem; margin: 0 auto; text-align: center; }
+  .eyebrow { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; color: var(--cta); margin: 0; }
+  .section-header h2 { font-size: clamp(2rem, 6vw, 2.85rem); line-height: 1.04; color: var(--neutral-900); margin: 14px 0 0; font-weight: 400; }
+  .section-header h2 em { font-style: italic; color: var(--cta); }
+  .section-header .lead { margin: 16px 0 0; font-size: 1.0625rem; line-height: 1.6; color: var(--neutral-500); }
+
+  /* ---------- Qué recibes ---------- */
+  .receive-grid { max-width: 62rem; margin: 32px auto 0; display: grid; gap: 20px; }
+  .receive-card { border: 1px solid var(--neutral-200); border-radius: 16px; background: #fff; padding: 24px; }
+  .receive-card__ic { width: 42px; height: 42px; border-radius: 10px; background: color-mix(in srgb, var(--cta) 10%, #fff); display: grid; place-items: center; margin-bottom: 14px; }
+  .receive-card__ic svg { width: 20px; height: 20px; color: var(--cta); }
+  .receive-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--neutral-900); margin: 0; }
+  .receive-card p { margin: 8px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--neutral-600); }
+
+  /* ---------- Podcast ---------- */
+  .podcast-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .podcast-wrap { max-width: 56rem; margin: 30px auto 0; display: grid; gap: 24px; align-items: center; }
+  .podcast-art { width: 100%; max-width: 20rem; margin: 0 auto; border-radius: 16px; overflow: hidden; border: 1px solid var(--neutral-200); background: linear-gradient(135deg, #1b1b1b 0%, #3a3a3a 100%); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; }
+  .podcast-art .lockup { color: #fff; font-size: 1.6rem; }
+  .podcast-copy h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; margin: 0; color: var(--neutral-900); }
+  .podcast-copy p { margin: 12px 0 0; font-size: 0.98rem; line-height: 1.65; color: var(--neutral-600); }
+  .podcast-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .podcast-link { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--neutral-200); border-radius: 999px; padding: 10px 18px; font-size: 0.875rem; font-weight: 600; color: var(--neutral-900); background: var(--paper); transition: border-color 0.2s ease, background 0.2s ease; }
+  .podcast-link:hover { border-color: var(--cta); background: color-mix(in srgb, var(--cta) 6%, #fff); }
+  .podcast-link svg { width: 16px; height: 16px; }
+
+  /* ---------- Conecta / redes ---------- */
+  .connect-grid { max-width: 56rem; margin: 30px auto 0; display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
+  .connect-link { display: flex; align-items: center; gap: 12px; border: 1px solid var(--neutral-200); border-radius: 14px; background: #fff; padding: 16px 18px; font-size: 0.95rem; font-weight: 600; color: var(--neutral-900); transition: border-color 0.2s ease, transform 0.2s ease; }
+  .connect-link:hover { border-color: var(--cta); transform: translateY(-2px); }
+  .connect-link__ic { flex-shrink: 0; width: 36px; height: 36px; border-radius: 999px; background: var(--paper); display: grid; place-items: center; }
+  .connect-link__ic svg { width: 18px; height: 18px; color: var(--cta); }
+  .connect-link span.sub { display: block; font-weight: 400; font-size: 0.8rem; color: var(--neutral-500); }
+
+  /* ---------- Eventos ---------- */
+  .events-grid { max-width: 62rem; margin: 30px auto 0; display: grid; gap: 18px; }
+  .event-card { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; border: 1px solid var(--neutral-200); border-radius: 16px; background: #fff; padding: 20px; }
+  .event-card__date { text-align: center; border-right: 1px solid var(--neutral-200); padding-right: 18px; min-width: 74px; }
+  .event-card__date .day { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--neutral-900); }
+  .event-card__date .month { display: block; margin-top: 4px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cta); }
+  .event-card h3 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 1.2rem; color: var(--neutral-900); }
+  .event-card p { margin: 6px 0 0; font-size: 0.9rem; line-height: 1.55; color: var(--neutral-600); }
+  .event-card .tag { display: inline-block; margin-top: 8px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--plata-deep); background: var(--paper); border-radius: 999px; padding: 4px 10px; }
+
+  /* ---------- Prueba social ---------- */
+  .social-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
+  .social-num { text-align: center; font-family: var(--serif); font-size: clamp(2.1rem, 6vw, 3.1rem); line-height: 1.1; color: var(--neutral-900); max-width: 40rem; margin: 0 auto; }
+  .social-num em { color: var(--cta); font-style: normal; }
+  .stats-row { max-width: 50rem; margin: 30px auto 0; display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); text-align: center; }
+  .stat b { display: block; font-family: var(--serif); font-size: 2rem; color: var(--neutral-900); }
+  .stat span { display: block; margin-top: 4px; font-size: 0.8rem; color: var(--neutral-500); }
+  .quotes-grid { max-width: 60rem; margin: 28px auto 0; display: grid; gap: 16px; }
+  .quote-card { background: var(--paper); border: 1px solid var(--neutral-200); border-radius: 12px; padding: 26px 24px; }
+  .quote-card p.quote { margin: 0; font-family: var(--serif); font-size: 1.2rem; line-height: 1.4; color: var(--neutral-900); }
+  .quote-card p.name { margin: 16px 0 0; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--neutral-500); }
+
+  /* ---------- Cómo funciona ---------- */
+  .steps { max-width: 62rem; margin: 32px auto 0; display: grid; gap: 22px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step .num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--neutral-900); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.2rem; }
+  .step h3 { margin: 6px 0 0; font-size: 1.2rem; font-weight: 400; }
+  .step p { margin: 6px 0 0; font-size: 0.9375rem; line-height: 1.55; color: var(--neutral-500); }
+
+  /* ---------- CTA final ---------- */
+  .closer { background: var(--neutral-900); color: #fff; padding: 54px 20px; }
+  .closer-wrap { max-width: 40rem; margin: 0 auto; text-align: center; }
+  .closer h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.04; font-weight: 400; }
+  .closer h2 em { color: var(--cta); font-style: italic; }
+  .closer p.sub { margin: 18px 0 0; font-size: 1.0625rem; color: #cfcfcf; }
+  .closer .signup-card { margin: 28px auto 0; text-align: left; }
+  .closer .price-line { margin: 22px auto 0; max-width: 34rem; font-size: 0.9375rem; line-height: 1.7; color: #a3a3a3; }
+  .closer .price-line b { color: #fff; font-weight: 600; }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 42rem; margin: 28px auto 0; }
+  .faq details { border-top: 1px solid var(--neutral-200); }
+  .faq details:last-child { border-bottom: 1px solid var(--neutral-200); }
+  .faq summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 44px; padding: 20px 4px; font-size: 1.0625rem; font-weight: 600; color: var(--neutral-900); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .chev { flex-shrink: 0; transition: transform 0.2s ease; color: var(--neutral-500); }
+  .faq details[open] summary .chev { transform: rotate(180deg); }
+  .faq details p { margin: 0; padding: 0 4px 20px; font-size: 0.9375rem; line-height: 1.65; color: var(--neutral-600); }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 34px 20px; }
+  .footer-inner { max-width: 72rem; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 14px; }
+  .footer-inner .lockup { font-size: 1.15rem; color: var(--neutral-800); }
+  .footer-note { font-size: 0.8125rem; color: var(--neutral-500); margin: 0; text-align: center; max-width: 60rem; line-height: 1.6; }
+
+  /* ---------- Sticky CTA ---------- */
+  .sticky-cta { position: fixed; inset: auto 0 0 0; z-index: 50; background: #fff; border-top: 1px solid var(--neutral-200); box-shadow: 0 -12px 40px -12px rgba(0,0,0,0.18); transform: translateY(100%); transition: transform 0.3s ease; padding-bottom: env(safe-area-inset-bottom, 0); }
+  .sticky-cta.visible { transform: translateY(0); }
+  .sticky-cta-inner { max-width: 72rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; }
+  .sticky-cta .offer-title { margin: 0; font-size: 0.9375rem; font-weight: 700; color: var(--neutral-900); }
+  .sticky-cta .offer-sub { margin: 2px 0 0; font-size: 0.75rem; color: var(--neutral-500); }
+  .sticky-cta .btn-cta { width: auto; min-height: 44px; padding: 12px 20px; font-size: 0.9375rem; flex-shrink: 0; }
+
+  @media (max-width: 639px) {
+    .topbar-inner { padding: 12px 16px; }
+    .topbar .lockup { font-size: 1.2rem; }
+    .topbar .nav-cta { min-height: 40px; padding: 9px 14px; font-size: 0.8rem; }
+    section { padding: 32px 16px; }
+    .hero { padding: 40px 16px 48px; }
+    .hero h1 { font-size: clamp(2.2rem, 7.5vw, 2.9rem); }
+    .connect-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: 1fr; gap: 10px; }
+    .event-card { grid-template-columns: 1fr; }
+    .event-card__date { border-right: 0; border-bottom: 1px solid var(--neutral-200); padding: 0 0 12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn-cta, .topbar .nav-cta, .sticky-cta, .connect-link { transition: none; }
+  }
+
+  @media (min-width: 640px) {
+    section { padding: 54px 24px; }
+    .hero { padding: 44px 24px 52px; }
+    .footer-inner { flex-direction: row; }
+    .receive-grid { grid-template-columns: repeat(2, 1fr); }
+    .quotes-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  }
+  @media (min-width: 768px) {
+    .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step .num { width: 52px; height: 52px; font-size: 1.5rem; }
+    .step h3 { font-size: 1.5rem; }
+    .step p { font-size: 1.06rem; line-height: 1.65; }
+    .podcast-wrap { grid-template-columns: 0.8fr 1.2fr; text-align: left; }
+  }
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: clamp(24px, 3vw, 40px); align-items: center; }
+    .receive-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-group">
+      <span class="lockup" aria-label="Whitepaper">Whitepaper</span>
+      <span class="cobrand-chip">Beneficio Banco Plata</span>
+    </div>
+    <a href="#activar" class="nav-cta">Activar beneficio</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="activar">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="cobrand-chip">Tarjeta premium Banco Plata</span>
+        <h1 class="font-display">Tu tarjeta Banco Plata ya incluye <em>Whitepaper</em>, sin costo.</h1>
+        <p class="lead">Whitepaper es el análisis de negocios que leen a diario directores, fundadores e inversionistas en México. Como cliente premium de Banco Plata, tienes acceso completo <strong>de regalo (comp)</strong>: ingresa tu correo y actívalo hoy mismo.</p>
+
+        <div class="signup-card">
+          <p class="signup-card__label">Activa tu acceso con tu correo</p>
+          <form class="signup-form" id="subscribeForm" novalidate>
+            <label class="visually-hidden" for="email">Correo electrónico</label>
+            <input class="signup-form__field" type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+            <!-- Honeypot anti-spam: debe quedar vacío -->
+            <input class="signup-form__hp" type="text" id="company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button type="submit" class="btn-cta" id="subscribeBtn">Quiero mi acceso <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="signup-note">Sin costo mientras seas cliente premium de Banco Plata. Cancela cuando quieras.</p>
+          <p class="signup-status" id="subscribeStatus" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <figure class="hero-figure">
+        <img src="assets/mockup.jpg" alt="Vista previa del newsletter Whitepaper" />
+      </figure>
+    </div>
+  </section>
+
+  <!-- QUÉ RECIBES -->
+  <section id="que-recibes">
+    <div class="section-header">
+      <p class="eyebrow">Tu beneficio incluye</p>
+      <h2 class="font-display">Todo lo que Whitepaper <em>ofrece hoy</em>, para ti.</h2>
+      <p class="lead">Sin versión reducida ni prueba limitada: tu acceso de cortesía por Banco Plata desbloquea el mismo contenido que reciben los suscriptores pagados.</p>
+    </div>
+
+    <div class="receive-grid">
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+        <h3>Whitepaper Hoy</h3>
+        <p>El newsletter diario (lunes a viernes) con las historias de negocios más relevantes de México, analizadas con contexto y profundidad, en 5 minutos de lectura.</p>
+      </article>
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19v3M8 22h8M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
+        <h3>Cada edición, también en audio</h3>
+        <p>Escucha el newsletter narrado por voces profesionales, ideal para el trayecto a la oficina o entre reuniones.</p>
+      </article>
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h3>Investigación de profundidad</h3>
+        <p>Artículos de investigación periodística original sobre empresas y sectores mexicanos, publicados cada semana.</p>
+      </article>
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Archivo completo</h3>
+        <p>Acceso a más de 250 artículos históricos del ecosistema empresarial mexicano, disponibles cuando quieras consultarlos.</p>
+      </article>
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9"/><path d="m2 7 8.97 6.28a2 2 0 0 0 2.06 0L15 10"/><circle cx="19" cy="18" r="3"/><path d="m22 21-1.5-1.5"/></svg></div>
+        <h3>Podcast Whitepaper</h3>
+        <p>Conversaciones con René y Karla sobre el ecosistema de negocios en México — la puerta de entrada favorita de miles de oyentes.</p>
+      </article>
+      <article class="receive-card">
+        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Eventos y comunidad</h3>
+        <p>Invitaciones a encuentros presenciales y virtuales con la comunidad de líderes y fundadores que lee Whitepaper.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section class="podcast-section" id="podcast">
+    <div class="podcast-wrap">
+      <div class="podcast-art">
+        <span class="lockup">Whitepaper</span>
+      </div>
+      <div class="podcast-copy">
+        <p class="eyebrow">Escúchalo</p>
+        <h3 class="font-display">El podcast de Whitepaper, con René y Karla</h3>
+        <p>Análisis de negocios objetivo, conciso y fácil de seguir — muchos suscriptores empiezan aquí antes de leer el newsletter. Disponible en tus plataformas favoritas.</p>
+        <div class="podcast-links">
+          <!-- TODO: reemplazar con las URLs reales del podcast -->
+          <a class="podcast-link" href="#" data-podcast="spotify"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Spotify</a>
+          <a class="podcast-link" href="#" data-podcast="apple"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Apple Podcasts</a>
+          <a class="podcast-link" href="#" data-podcast="youtube"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONECTA -->
+  <section id="conecta">
+    <div class="section-header">
+      <p class="eyebrow">Conecta con Whitepaper</p>
+      <h2 class="font-display">Síguenos donde <em>ya estás.</em></h2>
+    </div>
+    <div class="connect-grid">
+      <!-- TODO: reemplazar con las URLs reales de cada canal -->
+      <a class="connect-link" href="https://www.whitepaper.mx" target="_blank" rel="noopener">
+        <span class="connect-link__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+        <span>whitepaper.mx <span class="sub">Sitio web y archivo</span></span>
+      </a>
+      <a class="connect-link" href="#" data-social="linkedin">
+        <span class="connect-link__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></span>
+        <span>LinkedIn <span class="sub">Análisis e insights</span></span>
+      </a>
+      <a class="connect-link" href="#" data-social="instagram">
+        <span class="connect-link__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span>
+        <span>Instagram <span class="sub">Carruseles y contexto</span></span>
+      </a>
+      <a class="connect-link" href="#" data-social="x">
+        <span class="connect-link__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M20 4L4 20"/></svg></span>
+        <span>X (Twitter) <span class="sub">Observaciones y threads</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section id="eventos">
+    <div class="section-header">
+      <p class="eyebrow">Agenda</p>
+      <h2 class="font-display">Próximos <em>eventos</em> de Whitepaper.</h2>
+      <p class="lead">Encuentros presenciales y virtuales con la comunidad de líderes que lee Whitepaper. Como miembro con beneficio Banco Plata, recibirás tu invitación por correo.</p>
+    </div>
+    <div class="events-grid">
+      <!-- TODO: reemplazar con fecha, nombre y descripción reales -->
+      <div class="event-card">
+        <div class="event-card__date"><span class="day">--</span><span class="month">Próximamente</span></div>
+        <div>
+          <h3>Encuentro Whitepaper (próximamente)</h3>
+          <p>Detalles por confirmar. Los suscriptores con beneficio Banco Plata recibirán la invitación directamente en su correo.</p>
+          <span class="tag">Exclusivo suscriptores</span>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-card__date"><span class="day">--</span><span class="month">Próximamente</span></div>
+        <div>
+          <h3>Sesión con líderes del ecosistema (próximamente)</h3>
+          <p>Detalles por confirmar. Anunciaremos el cupo y la mecánica de registro en Whitepaper Hoy.</p>
+          <span class="tag">Cupo limitado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUEBA SOCIAL -->
+  <section class="social-section">
+    <p class="social-num">Leído por <em>más de 14,500</em> tomadores de decisión en México, con un open rate diario superior a 65%.</p>
+    <div class="stats-row">
+      <div class="stat"><b>14,500+</b><span>Suscriptores pagados</span></div>
+      <div class="stat"><b>135,000+</b><span>Suscriptores gratuitos</span></div>
+      <div class="stat"><b>65%+</b><span>Open rate diario</span></div>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <p class="quote">"Whitepaper es la mejor manera de estar informado del mundo de los negocios en México. Tiene una profundidad editorial e información inigualable en el mercado."</p>
+        <p class="name">Suscriptor Whitepaper</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote">"No hay otro medio en el que me informe de manera fácil y práctica de estas noticias que son relevantes en mi trabajo."</p>
+        <p class="name">Suscriptor Whitepaper</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote">"Me encanta escuchar su podcast, es sumamente entretenido. René y Karla hacen un excelente equipo. Por eso decidí inscribirme a Whitepaper."</p>
+        <p class="name">Oyente del podcast</p>
+      </div>
+      <div class="quote-card">
+        <p class="quote">"Whitepaper publishes articles about companies in Mexico that are well researched and you can't find them anywhere else."</p>
+        <p class="name">Suscriptor Whitepaper</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="section-header">
+      <p class="eyebrow">Cómo se activa</p>
+      <h2 class="font-display">Tres pasos, <em>un solo correo.</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="num">1</span>
+        <h3>Ingresa tu correo</h3>
+        <p>Usa el formulario de esta página. Es lo único que te pedimos.</p>
+      </div>
+      <div class="step">
+        <span class="num">2</span>
+        <h3>Validamos tu beneficio</h3>
+        <p>Confirmamos tu acceso como cliente premium de Banco Plata.</p>
+      </div>
+      <div class="step">
+        <span class="num">3</span>
+        <h3>Recibes tu acceso</h3>
+        <p>Te damos de alta como suscriptor de cortesía (comp) en Whitepaper y te avisamos por correo en cuanto esté activo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="section-header">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2 class="font-display">Antes de <em>activar.</em></h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Cuánto cuesta el beneficio?<span class="chev" aria-hidden="true">⌄</span></summary>
+        <p>Nada. Whitepaper es un beneficio incluido en tu tarjeta premium de Banco Plata mientras la conserves activa.</p>
+      </details>
+      <details>
+        <summary>¿Qué necesito para activarlo?<span class="chev" aria-hidden="true">⌄</span></summary>
+        <p>Solo tu correo electrónico. Te daremos de alta como suscriptor de cortesía (comp) directamente en Whitepaper.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tarda en activarse mi acceso?<span class="chev" aria-hidden="true">⌄</span></summary>
+        <p>Recibirás un correo de confirmación de Whitepaper una vez que tu acceso esté activo en la plataforma.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar cuando quiera?<span class="chev" aria-hidden="true">⌄</span></summary>
+        <p>Sí. Puedes darte de baja del newsletter en cualquier momento desde el link que aparece en cada correo de Whitepaper.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si dejo de ser cliente premium de Banco Plata?<span class="chev" aria-hidden="true">⌄</span></summary>
+        <p>Tu acceso de cortesía está ligado a tu tarjeta premium. Si tienes dudas sobre tu vigencia, contacta a Banco Plata.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="closer">
+    <div class="closer-wrap">
+      <h2 class="font-display">Tu tarjeta ya lo incluye. <em>Actívalo hoy.</em></h2>
+      <p class="sub">Ingresa tu correo y recibe Whitepaper sin costo, como cliente premium de Banco Plata.</p>
+      <div class="signup-card">
+        <p class="signup-card__label">Activa tu acceso con tu correo</p>
+        <form class="signup-form" id="subscribeFormClosing" novalidate>
+          <label class="visually-hidden" for="emailClosing">Correo electrónico</label>
+          <input class="signup-form__field" type="email" id="emailClosing" name="email" placeholder="tu@correo.com" autocomplete="email" required />
+          <input class="signup-form__hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn-cta" id="subscribeBtnClosing">Quiero mi acceso <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="signup-status" id="subscribeStatusClosing" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="lockup">Whitepaper <span class="x">×</span> Banco Plata</span>
+    <p class="footer-note">Whitepaper es un medio independiente de análisis empresarial. Este beneficio se ofrece como cortesía a clientes con tarjeta premium de Banco Plata. Whitepaper y Banco Plata son marcas de sus respectivos titulares.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <div class="sticky-cta-inner">
+    <div>
+      <p class="offer-title">Whitepaper, sin costo</p>
+      <p class="offer-sub">Beneficio de tu tarjeta premium Banco Plata</p>
+    </div>
+    <a href="#activar" class="btn-cta">Activar</a>
+  </div>
+</div>
+
+<style>
+  .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
+
+<script>
+  (function () {
+    "use strict";
+
+    function wireForm(formId, statusId, buttonId) {
+      var form = document.getElementById(formId);
+      if (!form) return;
+      var statusEl = document.getElementById(statusId);
+      var button = document.getElementById(buttonId);
+
+      form.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+        var emailInput = form.querySelector('input[type="email"]');
+        var honeypot = form.querySelector('input[name="company"]');
+        var email = (emailInput.value || "").trim();
+
+        statusEl.className = "signup-status";
+        statusEl.textContent = "";
+
+        if (honeypot && honeypot.value) {
+          // Bot detectado: fallar en silencio, sin exponer la razón.
+          return;
+        }
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          statusEl.textContent = "Ingresa un correo válido.";
+          statusEl.className = "signup-status visible error";
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = "Activando…";
+
+        fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, source: "banco-plata" })
+        })
+          .then(function (res) {
+            return res.json().catch(function () { return {}; }).then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+          })
+          .then(function (result) {
+            if (result.ok) {
+              statusEl.textContent = "Listo. Te avisaremos por correo en cuanto tu acceso esté activo.";
+              statusEl.className = "signup-status visible ok";
+              form.reset();
+            } else {
+              statusEl.textContent = (result.data && result.data.error) || "No pudimos procesar tu correo. Intenta de nuevo.";
+              statusEl.className = "signup-status visible error";
+            }
+          })
+          .catch(function () {
+            statusEl.textContent = "No pudimos conectar con el servidor. Intenta de nuevo en unos minutos.";
+            statusEl.className = "signup-status visible error";
+          })
+          .finally(function () {
+            button.disabled = false;
+            button.textContent = "Quiero mi acceso →";
+          });
+      });
+    }
+
+    wireForm("subscribeForm", "subscribeStatus", "subscribeBtn");
+    wireForm("subscribeFormClosing", "subscribeStatusClosing", "subscribeBtnClosing");
+
+    var stickyCta = document.getElementById("stickyCta");
+    var hero = document.getElementById("activar");
+    if (stickyCta && hero) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            stickyCta.classList.remove("visible");
+          } else {
+            stickyCta.classList.add("visible");
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(hero);
+    }
+  })();
+</script>
+
+</body>
+</html>
