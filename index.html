@@ -106,7 +106,12 @@
   .section-header .lead { margin: 16px 0 0; font-size: 1.0625rem; line-height: 1.6; color: var(--neutral-500); }
 
   /* ---------- Qué recibes ---------- */
-  .receive-grid { max-width: 62rem; margin: 32px auto 0; display: grid; gap: 20px; }
+  .offer-group { max-width: 62rem; margin: 0 auto; }
+  .section-header + .offer-group { margin-top: 32px; }
+  .offer-group + .offer-group { margin-top: 36px; }
+  .offer-group__label { margin: 0 0 16px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--plata-deep); }
+  .receive-grid { max-width: 62rem; margin: 0; display: grid; gap: 20px; }
+  .receive-grid--one { grid-template-columns: 1fr !important; max-width: 30rem; }
   .receive-card { border: 1px solid var(--neutral-200); border-radius: 16px; background: #fff; padding: 24px; }
   .receive-card__ic { width: 42px; height: 42px; border-radius: 10px; background: color-mix(in srgb, var(--cta) 10%, #fff); display: grid; place-items: center; margin-bottom: 14px; }
   .receive-card__ic svg { width: 20px; height: 20px; color: var(--cta); }
@@ -314,42 +319,46 @@
       <p class="lead"><strong>Tu acceso cortesía por Banco Plata</strong> desbloquea el mismo contenido que los suscriptores pagados.</p>
     </div>
 
-    <div class="receive-grid">
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
-        <h3>Whitepaper Hoy</h3>
-        <p>El newsletter diario (lunes a viernes) con las historias de negocios más relevantes de México, analizadas con contexto y profundidad, en 5 minutos de lectura.</p>
-      </article>
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19v3M8 22h8M12 2a4 4 0 0 0-4 4v6a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg></div>
-        <h3>Cada edición, también en audio</h3>
-        <p>Escucha el newsletter narrado por voces profesionales, ideal para el trayecto a la oficina o entre reuniones.</p>
-      </article>
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-        <h3>Investigación de profundidad</h3>
-        <p>Artículos de investigación periodística original sobre empresas y sectores mexicanos, publicados cada semana.</p>
-      </article>
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Archivo completo</h3>
-        <p>Acceso a más de 250 artículos históricos del ecosistema empresarial mexicano, disponibles cuando quieras consultarlos.</p>
-      </article>
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h9"/><path d="m2 7 8.97 6.28a2 2 0 0 0 2.06 0L15 10"/><circle cx="19" cy="18" r="3"/><path d="m22 21-1.5-1.5"/></svg></div>
-        <h3>Podcast Whitepaper</h3>
-        <p>Conversaciones con René y Karla sobre el ecosistema de negocios en México — la puerta de entrada favorita de miles de oyentes.</p>
-      </article>
-      <article class="receive-card">
-        <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Eventos y comunidad</h3>
-        <p>Invitaciones a encuentros presenciales y virtuales con la comunidad de líderes y fundadores que lee Whitepaper.</p>
-      </article>
+    <div class="offer-group">
+      <p class="offer-group__label">Por escrito</p>
+      <div class="receive-grid">
+        <article class="receive-card">
+          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+          <h3>Whitepaper Hoy</h3>
+          <p>El newsletter diario (lunes a viernes) con las historias de negocios más relevantes de México, analizadas con contexto y profundidad, en 5 minutos de lectura.</p>
+        </article>
+        <article class="receive-card">
+          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+          <h3>Investigación de profundidad</h3>
+          <p>Artículos de investigación periodística original sobre empresas y sectores mexicanos, publicados cada semana.</p>
+        </article>
+        <article class="receive-card">
+          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Archivo completo</h3>
+          <p>Acceso a más de 250 artículos históricos del ecosistema empresarial mexicano, disponibles cuando quieras consultarlos.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="offer-group">
+      <p class="offer-group__label">Comunidad y eventos</p>
+      <div class="receive-grid receive-grid--one">
+        <article class="receive-card">
+          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>Eventos y comunidad</h3>
+          <p>Invitaciones a encuentros presenciales y virtuales con la comunidad de líderes y fundadores que lee Whitepaper.</p>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- PODCAST -->
   <section class="podcast-section" id="podcast">
+    <div class="section-header">
+      <p class="eyebrow">Otro canal, otro formato</p>
+      <h2 class="font-display">El <em>podcast</em> de Whitepaper.</h2>
+      <p class="lead">Es un producto aparte del newsletter: una conversación semanal, no la versión narrada de tus ediciones escritas. Tu beneficio incluye acceso a ambos.</p>
+    </div>
     <div class="podcast-wrap">
       <div class="podcast-art">
         <span class="lockup">Whitepaper</span>
@@ -357,7 +366,7 @@
       <div class="podcast-copy">
         <p class="eyebrow">Escúchalo</p>
         <h3 class="font-display">El podcast de Whitepaper, con René y Karla</h3>
-        <p>Análisis de negocios objetivo, conciso y fácil de seguir — muchos suscriptores empiezan aquí antes de leer el newsletter. Disponible en tus plataformas favoritas.</p>
+        <p>Análisis de negocios objetivo, conciso y fácil de seguir — muchos oyentes descubren Whitepaper aquí antes de suscribirse al newsletter. Disponible en tus plataformas favoritas.</p>
         <div class="podcast-links">
           <!-- TODO: reemplazar con las URLs reales del podcast -->
           <a class="podcast-link" href="#" data-podcast="spotify"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg> Spotify</a>
@@ -367,6 +376,7 @@
       </div>
     </div>
   </section>
+
 
   <!-- CONECTA -->
   <section id="conecta">
