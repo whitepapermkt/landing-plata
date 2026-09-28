@@ -108,24 +108,16 @@
   /* ---------- Productos de lectura ---------- */
   .products-section { background: #f0efeb; border-top: 1px solid #deddd8; border-bottom: 1px solid #deddd8; }
   .products-section .section-header { max-width: 48rem; }
-  .products-stage { max-width: 72rem; margin: 54px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 1.2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; gap: 18px 30px; align-items: center; }
-  .products-visual { grid-column: 2; grid-row: 1 / span 2; align-self: stretch; min-height: 35rem; display: flex; align-items: center; justify-content: center; position: relative; }
-  .products-visual::before { content: ""; position: absolute; width: 76%; aspect-ratio: 1; border: 1px solid rgba(74, 82, 97, 0.22); border-radius: 50%; }
-  .products-visual::after { content: "WHITEPAPER"; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.28em; color: var(--plata-deep); }
-  .products-visual img { position: relative; z-index: 1; width: min(78%, 26rem); aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border: 10px solid #fff; box-shadow: 0 22px 50px rgba(23, 23, 23, 0.16); }
-  .product-card { position: relative; min-height: 13rem; padding: 25px 22px 22px; border-top: 1px solid rgba(74, 82, 97, 0.45); }
-  .product-card:nth-child(1) { grid-column: 1; grid-row: 1; }
-  .product-card:nth-child(2) { grid-column: 3; grid-row: 1; text-align: right; }
-  .product-card:nth-child(4) { grid-column: 3; grid-row: 2; text-align: right; }
-  .product-card:nth-child(5) { grid-column: 1; grid-row: 2; }
-  .product-card__number { display: block; margin-bottom: 20px; font-family: var(--serif); font-size: 1.25rem; color: var(--cta); }
-  .product-card__icon { width: 36px; height: 36px; display: grid; place-items: center; margin-bottom: 14px; color: var(--plata-deep); }
-  .product-card:nth-child(2) .product-card__icon, .product-card:nth-child(4) .product-card__icon { margin-left: auto; }
+  .products-stage { max-width: 64rem; margin: 54px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+  .product-card { position: relative; min-height: 17rem; padding: 28px 0 30px; border-top: 1px solid rgba(74, 82, 97, 0.45); }
+  .product-card:nth-child(-n + 2) { border-top: 2px solid var(--neutral-900); }
+  .product-card__number { display: block; margin-bottom: 22px; font-family: var(--serif); font-size: 1.25rem; color: var(--cta); }
+  .product-card__icon { width: 40px; height: 40px; display: grid; place-items: center; margin-bottom: 16px; color: var(--plata-deep); }
   .product-card__icon svg { width: 27px; height: 27px; }
-  .product-card h3 { margin: 0; font-family: var(--serif); font-size: 1.7rem; line-height: 1.05; font-weight: 400; color: var(--neutral-900); }
+  .product-card h3 { margin: 0; font-family: var(--serif); font-size: 1.9rem; line-height: 1.05; font-weight: 400; color: var(--neutral-900); }
   .product-card__time { margin: 8px 0 0; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.13em; font-weight: 700; color: var(--cta); }
-  .product-card p { margin: 13px 0 0; font-size: 0.98rem; line-height: 1.6; color: var(--neutral-600); }
-  .products-footnote { margin: 32px auto 0; max-width: 42rem; text-align: center; font-family: var(--editorial); font-size: 1.08rem; line-height: 1.6; color: var(--neutral-600); }
+  .product-card p { max-width: 30rem; margin: 13px 0 0; font-size: 1rem; line-height: 1.65; color: var(--neutral-600); }
+  .products-footnote { margin: 34px auto 0; max-width: 42rem; text-align: center; font-family: var(--editorial); font-size: 1.08rem; line-height: 1.6; color: var(--neutral-600); }
 
   /* ---------- Podcast ---------- */
   .podcast-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
@@ -225,11 +217,9 @@
     .hero p.lead { margin-top: 14px; font-size: 0.9375rem; line-height: 1.55; }
     .hero-figure { max-width: 22rem; }
     .products-section { padding-left: 16px; padding-right: 16px; }
-    .products-stage { margin-top: 34px; display: flex; flex-direction: column; gap: 0; }
-    .products-visual { order: -1; width: 100%; min-height: 25rem; margin-bottom: 18px; }
-    .products-visual::before { width: 82%; }
-    .products-visual img { width: min(66%, 18rem); border-width: 7px; }
+    .products-stage { margin-top: 34px; grid-template-columns: 1fr; gap: 0; }
     .product-card, .product-card:nth-child(2), .product-card:nth-child(4) { width: 100%; min-height: 0; padding: 22px 4px; text-align: left; }
+    .product-card:nth-child(-n + 2) { border-top-width: 2px; }
     .product-card__icon, .product-card:nth-child(2) .product-card__icon, .product-card:nth-child(4) .product-card__icon { margin-left: 0; }
     .product-card__number { margin-bottom: 12px; }
     .product-card h3 { font-size: 1.6rem; }
@@ -355,10 +345,6 @@
         <p class="product-card__time">Viernes · 8:00 AM</p>
         <p>Investigaciones, análisis e historias profundas sobre las empresas e industrias más relevantes de México.</p>
       </article>
-
-      <div class="products-visual">
-        <img src="assets/mockup.jpg" alt="Edición de Whitepaper" />
-      </div>
 
       <article class="product-card">
         <span class="product-card__number">03</span>
