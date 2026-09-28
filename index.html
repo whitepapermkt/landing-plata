@@ -105,18 +105,27 @@
   .section-header h2 em { font-style: italic; color: var(--cta); }
   .section-header .lead { margin: 16px 0 0; font-size: 1.0625rem; line-height: 1.6; color: var(--neutral-500); }
 
-  /* ---------- Qué recibes ---------- */
-  .offer-group { max-width: 62rem; margin: 0 auto; }
-  .section-header + .offer-group { margin-top: 32px; }
-  .offer-group + .offer-group { margin-top: 36px; }
-  .offer-group__label { margin: 0 0 16px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--plata-deep); }
-  .receive-grid { max-width: 62rem; margin: 0; display: grid; gap: 20px; }
-  .receive-grid--one { grid-template-columns: 1fr !important; max-width: 30rem; }
-  .receive-card { border: 1px solid var(--neutral-200); border-radius: 16px; background: #fff; padding: 24px; }
-  .receive-card__ic { width: 42px; height: 42px; border-radius: 10px; background: color-mix(in srgb, var(--cta) 10%, #fff); display: grid; place-items: center; margin-bottom: 14px; }
-  .receive-card__ic svg { width: 20px; height: 20px; color: var(--cta); }
-  .receive-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--neutral-900); margin: 0; }
-  .receive-card p { margin: 8px 0 0; font-size: 0.9375rem; line-height: 1.6; color: var(--neutral-600); }
+  /* ---------- Productos de lectura ---------- */
+  .products-section { background: #f0efeb; border-top: 1px solid #deddd8; border-bottom: 1px solid #deddd8; }
+  .products-section .section-header { max-width: 48rem; }
+  .products-stage { max-width: 72rem; margin: 54px auto 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, 1.2fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; gap: 18px 30px; align-items: center; }
+  .products-visual { grid-column: 2; grid-row: 1 / span 2; align-self: stretch; min-height: 35rem; display: flex; align-items: center; justify-content: center; position: relative; }
+  .products-visual::before { content: ""; position: absolute; width: 76%; aspect-ratio: 1; border: 1px solid rgba(74, 82, 97, 0.22); border-radius: 50%; }
+  .products-visual::after { content: "WHITEPAPER"; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.28em; color: var(--plata-deep); }
+  .products-visual img { position: relative; z-index: 1; width: min(78%, 26rem); aspect-ratio: 4 / 5; object-fit: cover; object-position: center; border: 10px solid #fff; box-shadow: 0 22px 50px rgba(23, 23, 23, 0.16); }
+  .product-card { position: relative; min-height: 13rem; padding: 25px 22px 22px; border-top: 1px solid rgba(74, 82, 97, 0.45); }
+  .product-card:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .product-card:nth-child(2) { grid-column: 3; grid-row: 1; text-align: right; }
+  .product-card:nth-child(4) { grid-column: 3; grid-row: 2; text-align: right; }
+  .product-card:nth-child(5) { grid-column: 1; grid-row: 2; }
+  .product-card__number { display: block; margin-bottom: 20px; font-family: var(--serif); font-size: 1.25rem; color: var(--cta); }
+  .product-card__icon { width: 36px; height: 36px; display: grid; place-items: center; margin-bottom: 14px; color: var(--plata-deep); }
+  .product-card:nth-child(2) .product-card__icon, .product-card:nth-child(4) .product-card__icon { margin-left: auto; }
+  .product-card__icon svg { width: 27px; height: 27px; }
+  .product-card h3 { margin: 0; font-family: var(--serif); font-size: 1.55rem; line-height: 1; font-weight: 400; color: var(--neutral-900); }
+  .product-card__time { margin: 8px 0 0; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.13em; font-weight: 700; color: var(--cta); }
+  .product-card p { margin: 13px 0 0; font-size: 0.86rem; line-height: 1.55; color: var(--neutral-600); }
+  .products-footnote { margin: 32px auto 0; max-width: 42rem; text-align: center; font-family: var(--editorial); font-size: 1.08rem; line-height: 1.6; color: var(--neutral-600); }
 
   /* ---------- Podcast ---------- */
   .podcast-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
@@ -215,6 +224,16 @@
     .hero h1 { margin-top: 12px; font-size: clamp(2rem, 8vw, 2.6rem); line-height: 1.12; }
     .hero p.lead { margin-top: 14px; font-size: 0.9375rem; line-height: 1.55; }
     .hero-figure { max-width: 22rem; }
+    .products-section { padding-left: 16px; padding-right: 16px; }
+    .products-stage { margin-top: 34px; display: flex; flex-direction: column; gap: 0; }
+    .products-visual { order: -1; width: 100%; min-height: 25rem; margin-bottom: 18px; }
+    .products-visual::before { width: 82%; }
+    .products-visual img { width: min(66%, 18rem); border-width: 7px; }
+    .product-card, .product-card:nth-child(2), .product-card:nth-child(4) { width: 100%; min-height: 0; padding: 22px 4px; text-align: left; }
+    .product-card__icon, .product-card:nth-child(2) .product-card__icon, .product-card:nth-child(4) .product-card__icon { margin-left: 0; }
+    .product-card__number { margin-bottom: 12px; }
+    .product-card h3 { font-size: 1.45rem; }
+    .products-footnote { margin-top: 20px; font-size: 0.98rem; }
     .signup-card { margin-top: 20px; padding: 18px 16px; }
     .signup-card__label { font-size: 0.85rem; }
     .signup-form__field { min-height: 48px; font-size: 0.95rem; }
@@ -311,45 +330,53 @@
     </div>
   </section>
 
-  <!-- QUÉ RECIBES -->
-  <section id="que-recibes">
+  <!-- PRODUCTOS DE LECTURA -->
+  <section class="products-section" id="que-recibes">
     <div class="section-header">
       <p class="eyebrow">Tu beneficio incluye</p>
-      <h2 class="font-display">Todo lo que Whitepaper <em>ofrece hoy</em>, para ti.</h2>
+      <h2 class="font-display">Cuatro formas de estar <em>al día.</em></h2>
       <p class="lead"><strong>Tu acceso cortesía por Banco Plata</strong> desbloquea el mismo contenido que los suscriptores pagados.</p>
     </div>
 
-    <div class="offer-group">
-      <p class="offer-group__label">Por escrito</p>
-      <div class="receive-grid">
-        <article class="receive-card">
-          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
-          <h3>Whitepaper Hoy</h3>
-          <p>El newsletter diario (lunes a viernes) con las historias de negocios más relevantes de México, analizadas con contexto y profundidad, en 5 minutos de lectura.</p>
-        </article>
-        <article class="receive-card">
-          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
-          <h3>Investigación de profundidad</h3>
-          <p>Artículos de investigación periodística original sobre empresas y sectores mexicanos, publicados cada semana.</p>
-        </article>
-        <article class="receive-card">
-          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-          <h3>Archivo completo</h3>
-          <p>Acceso a más de 250 artículos históricos del ecosistema empresarial mexicano, disponibles cuando quieras consultarlos.</p>
-        </article>
+    <div class="products-stage">
+      <article class="product-card">
+        <span class="product-card__number">01</span>
+        <span class="product-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12Z"/><path d="M4 7h16M8 11h8M8 14h5"/></svg></span>
+        <h3>Whitepaper Hoy</h3>
+        <p class="product-card__time">Lun – Vie · 7:00 AM</p>
+        <p>Nuestro resumen diario de negocios. Nosotros leemos e investigamos todo. Tú recibes lo más importante.</p>
+      </article>
+
+      <article class="product-card">
+        <span class="product-card__number">02</span>
+        <span class="product-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h14v16H5z"/><path d="M8 8h8M8 12h8M8 16h5"/><path d="m16 4 3 3"/></svg></span>
+        <h3>Principales</h3>
+        <p class="product-card__time">Viernes · 8:00 AM</p>
+        <p>Investigaciones, análisis e historias profundas sobre las empresas e industrias más relevantes de México.</p>
+      </article>
+
+      <div class="products-visual">
+        <img src="assets/mockup.jpg" alt="Edición de Whitepaper" />
       </div>
+
+      <article class="product-card">
+        <span class="product-card__number">03</span>
+        <span class="product-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span>
+        <h3>Spotlight</h3>
+        <p class="product-card__time">Miércoles</p>
+        <p>Un breve perfil de una empresa internacional relevante para México y tendencias en diferentes mercados.</p>
+      </article>
+
+      <article class="product-card">
+        <span class="product-card__number">04</span>
+        <span class="product-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 12h8M8 15h5"/></svg></span>
+        <h3>Overview</h3>
+        <p class="product-card__time">Sábados</p>
+        <p>Una colección de recomendaciones para tener en el radar: destinos, restaurantes, productos y marcas.</p>
+      </article>
     </div>
 
-    <div class="offer-group">
-      <p class="offer-group__label">Comunidad y eventos</p>
-      <div class="receive-grid receive-grid--one">
-        <article class="receive-card">
-          <div class="receive-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Eventos y comunidad</h3>
-          <p>Invitaciones a encuentros presenciales y virtuales con la comunidad de líderes y fundadores que lee Whitepaper.</p>
-        </article>
-      </div>
-    </div>
+    <p class="products-footnote">Información seleccionada con criterio editorial. Para empezar la semana informado y terminarla con algo nuevo en el radar.</p>
   </section>
 
   <!-- PODCAST -->
