@@ -120,7 +120,9 @@
   .products-footnote { margin: 34px auto 0; max-width: 42rem; text-align: center; font-family: var(--editorial); font-size: 1.08rem; line-height: 1.6; color: var(--neutral-600); }
 
   /* ---------- Podcast ---------- */
-  .podcast-section { overflow: hidden; background: #c5d0db; border-top: 1px solid #b8c5d1; border-bottom: 1px solid #b8c5d1; }
+  .podcast-section { overflow: hidden; background: var(--neutral-900); border-top: 1px solid var(--neutral-900); border-bottom: 1px solid var(--neutral-900); color: #fff; }
+  .podcast-section .section-header h2 { color: #fff; }
+  .podcast-section .section-header .lead { color: #bdbdbd; }
   .audio-featured { margin: 34px auto 0; max-width: 90rem; }
   .audio-featured__viewport { overflow: visible; }
   .audio-featured__track { display: flex; gap: 22px; transition: transform 0.45s ease; }
@@ -139,9 +141,9 @@
   .audio-featured__play svg { width: 15px; height: 15px; }
   .audio-featured__controls { max-width: 64rem; margin: 22px auto 0; display: flex; justify-content: space-between; }
   .audio-featured__dots, .audio-featured__buttons { display: flex; gap: 8px; }
-  .audio-featured__dot { width: 8px; height: 8px; border: 0; border-radius: 50%; padding: 0; background: rgba(23,23,23,0.25); cursor: pointer; }
-  .audio-featured__dot.active { background: var(--neutral-900); }
-  .audio-featured__button { width: 38px; height: 38px; border: 1px solid rgba(23,23,23,0.24); border-radius: 50%; background: transparent; cursor: pointer; }
+  .audio-featured__dot { width: 8px; height: 8px; border: 0; border-radius: 50%; padding: 0; background: rgba(255,255,255,0.3); cursor: pointer; }
+  .audio-featured__dot.active { background: var(--cta); }
+  .audio-featured__button { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.55); border-radius: 50%; background: transparent; color: #fff; cursor: pointer; }
   .audio-featured__button:disabled { opacity: 0.35; cursor: default; }
 
   /* ---------- Conecta / redes ---------- */
