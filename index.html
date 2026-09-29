@@ -120,24 +120,29 @@
   .products-footnote { margin: 34px auto 0; max-width: 42rem; text-align: center; font-family: var(--editorial); font-size: 1.08rem; line-height: 1.6; color: var(--neutral-600); }
 
   /* ---------- Podcast ---------- */
-  .podcast-section { background: #fff; border-top: 1px solid var(--neutral-200); border-bottom: 1px solid var(--neutral-200); }
-  .podcast-wrap { max-width: 64rem; margin: 34px auto 0; display: grid; gap: 32px; align-items: stretch; }
-  .podcast-art { width: 100%; min-height: 32rem; margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--neutral-200); background: linear-gradient(135deg, #1b1b1b 0%, #3a3a3a 100%); display: flex; align-items: center; justify-content: center; }
-  .podcast-art .lockup { color: #fff; font-size: clamp(1.8rem, 4vw, 3rem); }
-  .podcast-copy h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; margin: 0; color: var(--neutral-900); }
-  .podcast-copy > p { margin: 12px 0 0; font-size: 0.98rem; line-height: 1.65; color: var(--neutral-600); }
-  .audio-list { display: grid; gap: 10px; margin-top: 22px; }
-  .audio-card { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; border-top: 1px solid var(--neutral-200); padding: 16px 0; }
-  .audio-card:last-child { border-bottom: 1px solid var(--neutral-200); }
-  .audio-card__number { font-family: var(--serif); font-size: 1.15rem; color: var(--cta); }
-  .audio-card__icon { width: 34px; height: 34px; display: grid; place-items: center; color: var(--plata-deep); }
-  .audio-card__icon svg { width: 23px; height: 23px; }
-  .audio-card h4 { margin: 0; font-family: var(--serif); font-size: 1.25rem; line-height: 1.05; font-weight: 400; color: var(--neutral-900); }
-  .audio-card p { margin: 5px 0 0; font-size: 0.82rem; line-height: 1.45; color: var(--neutral-600); }
-  .audio-card__meta { display: block; margin-top: 5px; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cta); }
-  .audio-card__links { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
-  .audio-card__link { font-size: 0.7rem; font-weight: 700; color: var(--neutral-900); text-decoration: underline; text-underline-offset: 3px; }
-  .audio-card__link:hover { color: var(--cta); }
+  .podcast-section { overflow: hidden; background: #c5d0db; border-top: 1px solid #b8c5d1; border-bottom: 1px solid #b8c5d1; }
+  .audio-featured { margin: 34px auto 0; max-width: 90rem; }
+  .audio-featured__viewport { overflow: visible; }
+  .audio-featured__track { display: flex; gap: 22px; transition: transform 0.45s ease; }
+  .audio-featured__card { position: relative; flex: 0 0 19rem; height: 24rem; overflow: hidden; border-radius: 5px; background: #243b4b; color: #fff; }
+  .audio-featured__card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10, 22, 32, 0.04) 20%, rgba(10, 22, 32, 0.88) 100%); z-index: 1; }
+  .audio-featured__card::after { content: ""; position: absolute; inset: 14% 8%; border: 1px solid rgba(255,255,255,0.24); border-radius: 50%; transform: rotate(-16deg); }
+  .audio-featured__card:nth-child(1) { background: linear-gradient(135deg, #3e777b, #0c3042 65%, #071c2b); }
+  .audio-featured__card:nth-child(2) { background: linear-gradient(135deg, #e67d45, #3c7ba2 55%, #12344a); }
+  .audio-featured__card:nth-child(3) { background: linear-gradient(135deg, #e3a37f, #e96b3d 42%, #142c42); }
+  .audio-featured__card:nth-child(4) { background: linear-gradient(135deg, #334c62, #c18465 55%, #182837); }
+  .audio-featured__body { position: absolute; inset: auto 22px 20px; z-index: 2; }
+  .audio-featured__meta { display: flex; justify-content: space-between; gap: 12px; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+  .audio-featured__body h3 { max-width: 14rem; margin: 12px 0 0; font-family: var(--sans); font-size: 1.35rem; line-height: 1.05; font-weight: 700; }
+  .audio-featured__body p { margin: 8px 0 0; font-size: 0.82rem; line-height: 1.4; color: rgba(255,255,255,0.82); }
+  .audio-featured__play { position: absolute; right: 0; bottom: 0; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,0.75); border-radius: 50%; background: rgba(255,255,255,0.1); color: #fff; }
+  .audio-featured__play svg { width: 15px; height: 15px; }
+  .audio-featured__controls { max-width: 64rem; margin: 22px auto 0; display: flex; justify-content: space-between; }
+  .audio-featured__dots, .audio-featured__buttons { display: flex; gap: 8px; }
+  .audio-featured__dot { width: 8px; height: 8px; border: 0; border-radius: 50%; padding: 0; background: rgba(23,23,23,0.25); cursor: pointer; }
+  .audio-featured__dot.active { background: var(--neutral-900); }
+  .audio-featured__button { width: 38px; height: 38px; border: 1px solid rgba(23,23,23,0.24); border-radius: 50%; background: transparent; cursor: pointer; }
+  .audio-featured__button:disabled { opacity: 0.35; cursor: default; }
 
   /* ---------- Conecta / redes ---------- */
   .connect-grid { max-width: 56rem; margin: 30px auto 0; display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
@@ -383,6 +388,18 @@
       <h2 class="font-display"><em>Whitepaper Audio.</em></h2>
       <p class="lead">La experiencia en audio de Whitepaper para que puedas elegir cómo mantenerte informado.</p>
     </div>
+    <div class="audio-featured" data-audio-featured>
+      <div class="audio-featured__viewport">
+        <div class="audio-featured__track">
+          <article class="audio-featured__card"><div class="audio-featured__body"><div class="audio-featured__meta"><span>EP 01 · 40 MIN</span><span>Whitepaper</span></div><h3>La conversación de la semana</h3><p>Los movimientos y las historias que están definiendo los negocios.</p><a class="audio-featured__play" href="#" aria-label="Escuchar episodio 1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7V5Z"/></svg></a></div></article>
+          <article class="audio-featured__card"><div class="audio-featured__body"><div class="audio-featured__meta"><span>EP 02 · 32 MIN</span><span>Whitepaper</span></div><h3>Historias de negocios</h3><p>Empresas, líderes y decisiones del ecosistema empresarial mexicano.</p><a class="audio-featured__play" href="#" aria-label="Escuchar episodio 2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7V5Z"/></svg></a></div></article>
+          <article class="audio-featured__card"><div class="audio-featured__body"><div class="audio-featured__meta"><span>EP 03 · 28 MIN</span><span>Whitepaper</span></div><h3>Contexto para escuchar</h3><p>Información objetiva para acompañarte durante el día.</p><a class="audio-featured__play" href="#" aria-label="Escuchar episodio 3"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7V5Z"/></svg></a></div></article>
+          <article class="audio-featured__card"><div class="audio-featured__body"><div class="audio-featured__meta"><span>EP 04 · 36 MIN</span><span>Whitepaper</span></div><h3>Lo que está cambiando</h3><p>Una mirada a las tendencias que están moviendo los mercados.</p><a class="audio-featured__play" href="#" aria-label="Escuchar episodio 4"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7V5Z"/></svg></a></div></article>
+        </div>
+      </div>
+      <div class="audio-featured__controls"><div class="audio-featured__dots" aria-label="Seleccionar episodio"></div><div class="audio-featured__buttons"><button class="audio-featured__button" type="button" data-featured-prev aria-label="Episodio anterior">←</button><button class="audio-featured__button" type="button" data-featured-next aria-label="Episodio siguiente">→</button></div></div>
+    </div>
+    <!--
     <div class="podcast-wrap">
       <div class="podcast-art">
         <span class="lockup">Whitepaper</span>
@@ -410,6 +427,7 @@
         </div>
     </div>
   </section>
+      -->
 
 
   <!-- CONECTA -->
@@ -657,6 +675,22 @@
 
     wireForm("subscribeForm", "subscribeStatus", "subscribeBtn");
     wireForm("subscribeFormClosing", "subscribeStatusClosing", "subscribeBtnClosing");
+
+    var featuredAudio = document.querySelector("[data-audio-featured]");
+    if (featuredAudio) {
+      var featuredTrack = featuredAudio.querySelector(".audio-featured__track");
+      var featuredCards = Array.prototype.slice.call(featuredAudio.querySelectorAll(".audio-featured__card"));
+      var featuredDots = featuredAudio.querySelector(".audio-featured__dots");
+      var featuredPrev = featuredAudio.querySelector("[data-featured-prev]");
+      var featuredNext = featuredAudio.querySelector("[data-featured-next]");
+      var featuredIndex = 0;
+      featuredCards.forEach(function (_, index) { var dot = document.createElement("button"); dot.type = "button"; dot.className = "audio-featured__dot"; dot.setAttribute("aria-label", "Mostrar episodio " + (index + 1)); dot.addEventListener("click", function () { setFeaturedAudio(index); }); featuredDots.appendChild(dot); });
+      function setFeaturedAudio(index) { featuredIndex = Math.max(0, Math.min(index, featuredCards.length - 1)); featuredTrack.style.transform = "translateX(-" + (featuredIndex * (featuredCards[0].getBoundingClientRect().width + 22)) + "px)"; Array.prototype.forEach.call(featuredDots.children, function (dot, i) { dot.classList.toggle("active", i === featuredIndex); }); featuredPrev.disabled = featuredIndex === 0; featuredNext.disabled = featuredIndex === featuredCards.length - 1; }
+      featuredPrev.addEventListener("click", function () { setFeaturedAudio(featuredIndex - 1); });
+      featuredNext.addEventListener("click", function () { setFeaturedAudio(featuredIndex + 1); });
+      window.addEventListener("resize", function () { setFeaturedAudio(featuredIndex); });
+      setFeaturedAudio(0);
+    }
 
     var stickyCta = document.getElementById("stickyCta");
     var hero = document.getElementById("activar");
